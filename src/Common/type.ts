@@ -4,8 +4,8 @@ export type ChildrenType = {
     children : ReactNode
 }
 
-type Todo = {
-     id : number;
+export type Todo = {
+     id : string;
      task : string;
      completed : boolean;
      createdAt : Date;
@@ -13,7 +13,7 @@ type Todo = {
 
 export type TodosContextType = {
      todos : Todo[],
-     setTodos : React.Dispatch<React.SetStateAction<never[]>>;
+    //  setTodos : React.Dispatch<React.SetStateAction<never[]>>;
      handleAddTodo : (todo:string) => void
 
 

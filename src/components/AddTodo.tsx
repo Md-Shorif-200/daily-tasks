@@ -1,8 +1,10 @@
 import React, { useState } from "react"
+import { useTodos } from "../Context/TodosProvier";
 
 export const AddTodo = () => {
      const [todo,setTodo] = useState('') ;
-      console.log(todo);
+      const {handleAddTodo} = useTodos()
+     //  console.log(todo);
 
       const handleFormSubmit = (e:React.FormEvent) => {
                e.preventDefault();
