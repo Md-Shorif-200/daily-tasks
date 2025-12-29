@@ -1,7 +1,7 @@
 import { useTodos } from "../hooks/useTodos";
 
 export const TodoList = () => {
-  const { todos,toggleTodoAsCompleted } = useTodos();
+  const { todos,toggleTodoAsCompleted, handleDelteTodo,} = useTodos();
 
   return (
     <div>
@@ -18,7 +18,7 @@ export const TodoList = () => {
 
               {
                  todo.completed && (
-                     <button type="button"> Delete </button>
+                     <button type="button" className="cursor-pointer" onClick={() => handleDelteTodo(todo.id)} > Delete </button>
                  )
               }
           </div>

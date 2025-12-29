@@ -14,7 +14,8 @@ export type Todo = {
 export type TodosContextType = {
      todos : Todo[],
     //  setTodos : React.Dispatch<React.SetStateAction<never[]>>;
-     handleAddTodo : (todo:string) => void
-          toggleTodoAsCompleted : (id:string) => void
+     handleAddTodo : (todo:string) => void;
+          toggleTodoAsCompleted : (id:string) => void;
+          handleDelteTodo  : (id:string) => void
 
 }

@@ -45,12 +45,21 @@ export const TodosProvier = ({children}:ChildrenType) => {
         })
  }
 
+//  delete todo
+ const handleDelteTodo = (id:string) => {
+      setTodos((prev) => {
+        const newTodos = prev.filter(todo => todo.id !=id)
+         return newTodos;
+       })
+ }
+
 
         const provierInfo = {
              todos,
             //  setTodos,
              handleAddTodo,
-             toggleTodoAsCompleted
+             toggleTodoAsCompleted,
+             handleDelteTodo
         }
 
   return (
