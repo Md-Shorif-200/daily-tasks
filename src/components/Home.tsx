@@ -1,5 +1,6 @@
 import { Container } from "../Common/Container"
 import { AddTodo } from "./AddTodo"
+import { TodoList } from "./TodoList"
 
 export const Home = () => {
   return (
@@ -7,6 +8,7 @@ export const Home = () => {
          <Container>
            <h1>  Todo : React + TypeScript </h1>
                     <AddTodo/>
+                     <TodoList/>
          </Container>
     </div>
   )

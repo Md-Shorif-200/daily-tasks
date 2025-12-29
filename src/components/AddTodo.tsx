@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { useTodos } from "../Context/TodosProvier";
+import { useTodos } from "../hooks/useTodos";
+
 
 export const AddTodo = () => {
      const [todo,setTodo] = useState('') ;

@@ -1,7 +1,8 @@
-import { createContext, useContext, useState } from "react";
-import type { ChildrenType, Todo, TodosContextType,  } from "../Common/type";
+import {  useState } from "react";
+import type { ChildrenType, Todo, } from "../Common/type";
+import { TodosContext } from "./TodosContext";
 
- const TodosContext = createContext<TodosContextType | null>(null) ;
+
 
 
 
@@ -31,10 +32,25 @@ export const TodosProvier = ({children}:ChildrenType) => {
        console.log("current value : ",todos);
 
 
+       // ! Toggle todo 
+ const  toggleTodoAsCompleted = (id:string) => {
+        setTodos((prev) => {
+           const newTodos = prev.map(todo => {
+                 if (todo.id === id ) {
+                  return {...todo,completed:!todo.completed}
+                 }
+                 return todo
+           })
+            return newTodos
+        })
+ }
+
+
         const provierInfo = {
              todos,
             //  setTodos,
-             handleAddTodo
+             handleAddTodo,
+             toggleTodoAsCompleted
         }
 
   return (
@@ -46,11 +62,3 @@ export const TodosProvier = ({children}:ChildrenType) => {
 }
 
 
-
-export const useTodos = () => {
-     const  todosConsumer =  useContext(TodosContext)
-       if(!todosConsumer){
-        throw new Error('someThing is Wrong')
-       }
-  return todosConsumer 
-}
