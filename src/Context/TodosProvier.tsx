@@ -5,8 +5,8 @@ import { TodosContext } from "./TodosContext";
 export const TodosProvier = ({ children }: ChildrenType) => {
   const [todos, setTodos] = useState<Todo[]>(() => {
       try {
-         const newTodos = localStorage.getItem('todos') || [] ;
-         return JSON.parse(newTodos) as Todo[];
+         const newTodos = localStorage.getItem('todos') ;
+         return  newTodos ? JSON.parse(newTodos) as Todo[] : [];
       } catch (error) {
           console.log(error);
           
